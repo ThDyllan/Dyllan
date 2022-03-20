@@ -1,0 +1,39 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input</title>
+</head>
+
+<body>
+	<form id="form">
+	  <label>Message <input id="input" type="text"></label>
+	  <br>
+	</form>
+	<p id="log">
+	
+	</p>
+	
+	<script>
+	var index = 1
+	function logSubmit(event) {
+		const newDiv = document.createElement("div");
+		const newContent = document.createTextNode(input.value);
+		input.value = "";
+		newDiv.appendChild(newContent);
+		document.body.insertBefore(newDiv, log);
+		newDiv.id = index++;
+	  //log.textContent = input.value;
+	  event.preventDefault();
+	}
+
+	const form = document.getElementById('form');
+	const log = document.getElementById('log');
+	const input = document.getElementById('input');
+	form.addEventListener('submit', logSubmit);
+	</script>
+</body>
+
+</html>
